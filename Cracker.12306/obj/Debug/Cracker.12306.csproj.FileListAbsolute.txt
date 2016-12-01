@@ -1,0 +1,11 @@
+D:\开发\Cracker.12306\Cracker.12306\bin\Debug\Cracker.12306.exe.config
+D:\开发\Cracker.12306\Cracker.12306\bin\Debug\Cracker.12306.exe
+D:\开发\Cracker.12306\Cracker.12306\bin\Debug\Cracker.12306.pdb
+D:\开发\Cracker.12306\Cracker.12306\obj\Debug\Cracker.12306.csprojResolveAssemblyReference.cache
+D:\开发\Cracker.12306\Cracker.12306\obj\Debug\Cracker._12306.Properties.Resources.resources
+D:\开发\Cracker.12306\Cracker.12306\obj\Debug\Cracker.12306.csproj.GenerateResource.Cache
+D:\开发\Cracker.12306\Cracker.12306\obj\Debug\Cracker.12306.exe
+D:\开发\Cracker.12306\Cracker.12306\obj\Debug\Cracker.12306.pdb
+D:\开发\Cracker.12306\Cracker.12306\bin\Debug\Cracker.12306.Helper.dll
+D:\开发\Cracker.12306\Cracker.12306\bin\Debug\Cracker.12306.Helper.pdb
+D:\开发\Cracker.12306\Cracker.12306\obj\Debug\Cracker._12306.Main.resources
