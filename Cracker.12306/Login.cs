@@ -17,6 +17,15 @@ namespace Cracker._12306
         {
             InitializeComponent();
             _login.Init().GetDynamicFormUrl();
+            this.Load += Login_Load;
         }
+
+        void Login_Load(object sender, EventArgs e)
+        {
+            Image image;
+            _login.GetPassCodeUrl(out image);
+            pic_PassCode.Image = image;
+        }
+
     }
 }

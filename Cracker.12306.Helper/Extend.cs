@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Drawing;
 namespace Cracker._12306.Helper
 {
     public static class Extend
@@ -28,6 +28,16 @@ namespace Cracker._12306.Helper
             ResponseStream.Close();
             httpWebResponse.Close();
             return responseStr;
+        }
+
+        public static Image ResponseStreamToImage(this HttpWebResponse httpWebResponse)
+        {
+            Stream ResponseStream = httpWebResponse.GetResponseStream();
+            if (httpWebResponse.ContentEncoding.ToLower().Contains("gzip"))
+            {
+                ResponseStream = new GZipStream(ResponseStream, CompressionMode.Decompress);
+            }
+            return Image.FromStream(ResponseStream);
         }
     }
 }

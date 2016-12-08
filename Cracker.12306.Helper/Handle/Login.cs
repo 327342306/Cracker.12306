@@ -4,19 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
+using System.Drawing;
 namespace Cracker._12306.Helper.Handle
 {
     public class Login
     {
         private string InitUrl = "https://kyfw.12306.cn/otn/login/init";
-        private string getDynamicFormUrl = "";
-
-        //换取cookie的链接
-        //https://kyfw.12306.cn/otn/dynamicJs/lwtenws
+        private string DynamicFormUrl = "https://kyfw.12306.cn{0}";
 
         //获取验证码链接
-        //https://kyfw.12306.cn/otn/passcodeNew/getPassCodeNew?module=login&rand=sjrand&0.500551644480113
+        private string PassCodeUrl = "https://kyfw.12306.cn/otn/passcodeNew/getPassCodeNew?module={0}&rand=sjrand&{1}";
 
 
         //判断验证码是否正确
@@ -28,7 +25,7 @@ namespace Cracker._12306.Helper.Handle
             Regex InitRegex = new Regex(@"<script src=""(?<url>[^""]*)"" type=""text/javascript"" xml:space=""preserve""></script>", RegexOptions.Singleline);
             if (InitRegex.IsMatch(InitStr))
             {
-                getDynamicFormUrl = "https://kyfw.12306.cn" + InitRegex.Match(InitStr).Groups["url"].Value;
+                DynamicFormUrl = string.Format(DynamicFormUrl, InitRegex.Match(InitStr).Groups["url"].Value);
             }
             else
             {
@@ -39,8 +36,16 @@ namespace Cracker._12306.Helper.Handle
 
         public Login GetDynamicFormUrl()
         {
-            var GetDynamicFormUrlResponse = Http.Get(getDynamicFormUrl, Public.UserAgent, Public.AcceptEncoding, "kyfw.12306.cn");
+            var GetDynamicFormUrlResponse = Http.Get(DynamicFormUrl, Public.UserAgent, Public.AcceptEncoding, "kyfw.12306.cn");
             var GetDynamicFormUrlStr = GetDynamicFormUrlResponse.ResponseStreamToString();
+            return this;
+        }
+
+        public Login GetPassCodeUrl(out Image image)
+        {
+            string RandomStr = "0." + Public.Random(15);
+            var PassCodeResponse = Http.Get(string.Format(PassCodeUrl, "login", RandomStr), Public.UserAgent, Public.AcceptEncoding, "kyfw.12306.cn");
+            image = PassCodeResponse.ResponseStreamToImage();
             return this;
         }
     }
