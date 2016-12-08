@@ -5,19 +5,21 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Drawing;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 namespace Cracker._12306.Helper.Handle
 {
     public class Login
     {
+       
         private string InitUrl = "https://kyfw.12306.cn/otn/login/init";
         private string DynamicFormUrl = "https://kyfw.12306.cn{0}";
-
         //获取验证码链接
         private string PassCodeUrl = "https://kyfw.12306.cn/otn/passcodeNew/getPassCodeNew?module={0}&rand=sjrand&{1}";
 
 
         //判断验证码是否正确
-        //https://kyfw.12306.cn/otn/passcodeNew/checkRandCodeAnsyn
+        private string CheckCodeUrl = "https://kyfw.12306.cn/otn/passcodeNew/checkRandCodeAnsyn";
         public Login Init()
         {
             var InitResponse = Http.Get(InitUrl, Public.UserAgent, Public.AcceptEncoding, "kyfw.12306.cn");
@@ -41,12 +43,22 @@ namespace Cracker._12306.Helper.Handle
             return this;
         }
 
-        public Login GetPassCodeUrl(out Image image)
+        public Login GetPassCode(out Image image)
         {
             string RandomStr = "0." + Public.Random(15);
             var PassCodeResponse = Http.Get(string.Format(PassCodeUrl, "login", RandomStr), Public.UserAgent, Public.AcceptEncoding, "kyfw.12306.cn");
             image = PassCodeResponse.ResponseStreamToImage();
             return this;
         }
+
+        public Login CheckPassCode(List<Point> PassCodeAllPoint)
+        {
+            string pointStr = string.Join(",",PassCodeAllPoint.Select<Point, string>(i => (i.X.ToString() + "," + i.Y.ToString())).ToList());
+            byte[] postData = Encoding.UTF8.GetBytes("randCode=" + pointStr + "&rand=sjrand");
+            var CheckPassCodeResponse = Http.Post(CheckCodeUrl, postData, Public.UserAgent, Public.AcceptEncoding, "kyfw.12306.cn", InitUrl, Public.Domain, "application/x-www-form-urlencoded; charset=UTF-8", true);
+            var CheckPassCodeStr = CheckPassCodeResponse.ResponseStreamToJson();
+            return this;
+        }
+
     }
 }

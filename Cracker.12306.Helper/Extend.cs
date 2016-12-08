@@ -7,6 +7,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 namespace Cracker._12306.Helper
 {
     public static class Extend
@@ -38,6 +40,20 @@ namespace Cracker._12306.Helper
                 ResponseStream = new GZipStream(ResponseStream, CompressionMode.Decompress);
             }
             return Image.FromStream(ResponseStream);
+        }
+
+        public static JObject ResponseStreamToJson(this HttpWebResponse httpWebResponse)
+        {
+            Stream ResponseStream = httpWebResponse.GetResponseStream();
+            if (httpWebResponse.ContentEncoding.ToLower().Contains("gzip"))
+            {
+                ResponseStream = new GZipStream(ResponseStream, CompressionMode.Decompress);
+            }
+            StreamReader ResponseStreamReader = new StreamReader(ResponseStream);
+            string responseStr = ResponseStreamReader.ReadToEnd();
+            ResponseStream.Close();
+            httpWebResponse.Close();
+            return JObject.Parse(responseStr);
         }
     }
 }

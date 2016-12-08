@@ -10,3 +10,7 @@ D:\开发\Cracker.12306\Cracker.12306\bin\Debug\Cracker.12306.Helper.dll
 D:\开发\Cracker.12306\Cracker.12306\bin\Debug\Cracker.12306.Helper.pdb
 D:\开发\Cracker.12306\Cracker.12306\obj\Debug\Cracker._12306.Main.resources
 D:\开发\Cracker.12306\Cracker.12306\obj\Debug\Cracker._12306.Login.resources
+D:\开发\Cracker.12306\Cracker.12306\bin\Debug\Newtonsoft.Json.dll
+D:\开发\Cracker.12306\Cracker.12306\bin\Debug\Newtonsoft.Json.xml
+D:\开发\Cracker.12306\Cracker.12306\bin\Debug\Cracker.12306.UserControls.dll
+D:\开发\Cracker.12306\Cracker.12306\bin\Debug\Cracker.12306.UserControls.pdb

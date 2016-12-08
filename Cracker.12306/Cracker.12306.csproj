@@ -91,6 +91,10 @@
       <Project>{9dac2e3d-988f-46a0-b117-ec43d92a7fa7}</Project>
       <Name>Cracker.12306.Helper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cracker.12306.UserControls\Cracker.12306.UserControls.csproj">
+      <Project>{d43da3c4-e758-4c4a-94e9-01c7bd4f875a}</Project>
+      <Name>Cracker.12306.UserControls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

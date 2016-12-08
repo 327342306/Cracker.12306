@@ -1,0 +1,8 @@
+D:\开发\Cracker.12306\Cracker.12306.UserControls\bin\Debug\Cracker.12306.UserControls.dll
+D:\开发\Cracker.12306\Cracker.12306.UserControls\bin\Debug\Cracker.12306.UserControls.pdb
+D:\开发\Cracker.12306\Cracker.12306.UserControls\obj\Debug\Cracker.12306.UserControls.dll
+D:\开发\Cracker.12306\Cracker.12306.UserControls\obj\Debug\Cracker.12306.UserControls.pdb
+D:\开发\Cracker.12306\Cracker.12306.UserControls\obj\Debug\Cracker._12306.UserControls.CodePointIcon.resources
+D:\开发\Cracker.12306\Cracker.12306.UserControls\obj\Debug\Cracker._12306.UserControls.Properties.Resources.resources
+D:\开发\Cracker.12306\Cracker.12306.UserControls\obj\Debug\Cracker.12306.UserControls.csproj.GenerateResource.Cache
+D:\开发\Cracker.12306\Cracker.12306.UserControls\obj\Debug\Cracker.12306.UserControls.csprojResolveAssemblyReference.cache
