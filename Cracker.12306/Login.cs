@@ -30,7 +30,19 @@ namespace Cracker._12306
 
         void button1_Click(object sender, EventArgs e)
         {
-            _login.CheckPassCode(PassCodeAllPoint);
+            if (PassCodeAllPoint.Count > 0)
+            {
+                if (_login.CheckPassCode(PassCodeAllPoint))
+                {
+                    this.btn_Login.Enabled = false;
+                    this.btn_Login.Text = "正在登录";
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("傻呀，不点验证码！");
+            }
         }
         List<Point> PassCodeAllPoint = new List<Point>();
         void pic_PassCode_Click(object sender, EventArgs e)
@@ -74,19 +86,13 @@ namespace Cracker._12306
             pic_PassCode.Controls.Remove(((CodePointIcon)sender));
         }
 
-
-
-
         void Login_Load(object sender, EventArgs e)
         {
             LoadCode();
         }
-
         private void LoadCode()
         {
-            Image image;
-            _login.GetPassCode(out image);
-            pic_PassCode.Image = image;
+            pic_PassCode.Image = _login.GetPassCode();
             for (int i = 0; i < pic_PassCode.Controls.Count; i++)
             {
                 pic_PassCode.Controls.RemoveAt(i);

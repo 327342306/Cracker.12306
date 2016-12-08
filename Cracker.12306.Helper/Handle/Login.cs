@@ -43,21 +43,21 @@ namespace Cracker._12306.Helper.Handle
             return this;
         }
 
-        public Login GetPassCode(out Image image)
+        public Image GetPassCode()
         {
             string RandomStr = "0." + Public.Random(15);
             var PassCodeResponse = Http.Get(string.Format(PassCodeUrl, "login", RandomStr), Public.UserAgent, Public.AcceptEncoding, "kyfw.12306.cn");
-            image = PassCodeResponse.ResponseStreamToImage();
-            return this;
+            Image image = PassCodeResponse.ResponseStreamToImage();
+            return image;
         }
 
-        public Login CheckPassCode(List<Point> PassCodeAllPoint)
+        public bool CheckPassCode(List<Point> PassCodeAllPoint)
         {
             string pointStr = string.Join(",",PassCodeAllPoint.Select<Point, string>(i => (i.X.ToString() + "," + i.Y.ToString())).ToList());
             byte[] postData = Encoding.UTF8.GetBytes("randCode=" + pointStr + "&rand=sjrand");
             var CheckPassCodeResponse = Http.Post(CheckCodeUrl, postData, Public.UserAgent, Public.AcceptEncoding, "kyfw.12306.cn", InitUrl, Public.Domain, "application/x-www-form-urlencoded; charset=UTF-8", true);
-            var CheckPassCodeStr = CheckPassCodeResponse.ResponseStreamToJson();
-            return this;
+            var CheckPassCodeJson = CheckPassCodeResponse.ResponseStreamToJson();
+            return CheckPassCodeJson["data"]["result"].ToString() == "1";
         }
 
     }
