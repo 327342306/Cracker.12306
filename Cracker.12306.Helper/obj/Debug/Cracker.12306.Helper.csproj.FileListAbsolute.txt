@@ -2,3 +2,4 @@ D:\开发\Cracker.12306\Cracker.12306.Helper\bin\Debug\Cracker.12306.Helper.dll
 D:\开发\Cracker.12306\Cracker.12306.Helper\bin\Debug\Cracker.12306.Helper.pdb
 D:\开发\Cracker.12306\Cracker.12306.Helper\obj\Debug\Cracker.12306.Helper.dll
 D:\开发\Cracker.12306\Cracker.12306.Helper\obj\Debug\Cracker.12306.Helper.pdb
+D:\开发\Cracker.12306\Cracker.12306.Helper\obj\Debug\Cracker.12306.Helper.csprojResolveAssemblyReference.cache

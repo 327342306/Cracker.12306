@@ -40,11 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extend.cs" />
+    <Compile Include="Handle\Login.cs" />
     <Compile Include="Http.cs" />
     <Compile Include="Model\Station.cs" />
     <Compile Include="Model\StationStartTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stations.cs" />
+    <Compile Include="Handle\Stations.cs" />
+    <Compile Include="Public.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

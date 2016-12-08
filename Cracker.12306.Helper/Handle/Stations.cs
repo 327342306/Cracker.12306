@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Cracker._12306.Helper
+namespace Cracker._12306.Helper.Handle
 {
     public class Stations
     {
@@ -27,8 +27,8 @@ namespace Cracker._12306.Helper
             #region 获取车站站点信息
             var StationResponse = Http.Get(
                 "https://kyfw.12306.cn/otn/resources/js/framework/station_name.js",
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586",
-                "gzip, deflate",
+                Public.UserAgent,
+                Public.AcceptEncoding,
                 "kyfw.12306.cn"
                 );
             string StationsStr = StationResponse.ResponseStreamToString();
@@ -66,8 +66,8 @@ namespace Cracker._12306.Helper
             #region 获取车站起售时间信息
             var StationStartTimeResponse = Http.Get(
                 "https://kyfw.12306.cn/otn/resources/js/query/qss.js",
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586",
-                "gzip, deflate",
+                Public.UserAgent,
+                Public.AcceptEncoding,
                 "kyfw.12306.cn"
                 );
             string stationStartTimeStr = StationStartTimeResponse.ResponseStreamToString();

@@ -12,9 +12,11 @@ namespace Cracker._12306
 {
     public partial class Login : Form
     {
+        Cracker._12306.Helper.Handle.Login _login = new Helper.Handle.Login();
         public Login()
         {
             InitializeComponent();
+            _login.Init().GetDynamicFormUrl();
         }
     }
 }

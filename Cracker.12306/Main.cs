@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Cracker._12306.Helper;
+using Cracker._12306.Helper.Handle;
 using System.Threading;
 namespace Cracker._12306
 {

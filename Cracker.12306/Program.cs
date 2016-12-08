@@ -1,4 +1,4 @@
-﻿using Cracker._12306.Helper;
+﻿using Cracker._12306.Helper.Handle;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +19,7 @@ namespace Cracker._12306
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Login());
         }
     }
 }
