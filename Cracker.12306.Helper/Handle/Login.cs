@@ -38,8 +38,8 @@ namespace Cracker._12306.Helper.Handle
 
         public Login GetDynamicFormUrl()
         {
-            var GetDynamicFormUrlResponse = Http.Get(DynamicFormUrl, Public.UserAgent, Public.AcceptEncoding, "kyfw.12306.cn");
-            var GetDynamicFormUrlStr = GetDynamicFormUrlResponse.ResponseStreamToString();
+            //var GetDynamicFormUrlResponse = Http.Get(DynamicFormUrl, Public.UserAgent, Public.AcceptEncoding, "kyfw.12306.cn");
+            //var GetDynamicFormUrlStr = GetDynamicFormUrlResponse.ResponseStreamToString();
             return this;
         }
 

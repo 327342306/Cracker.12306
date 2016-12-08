@@ -46,6 +46,10 @@ namespace Cracker._12306.Helper
             {
                 request.Headers.Add("Cache-Control", CacheControl);
             }
+            if (!string.IsNullOrEmpty(Public.WebProxy))
+            {
+                request.Proxy = new WebProxy(Public.WebProxy);
+            }
             ServicePointManager.ServerCertificateValidationCallback += RemoteCertificateValidate;
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             return response;
@@ -97,6 +101,10 @@ namespace Cracker._12306.Helper
             {
                 request.Headers.Add("X-Requested-With", "XMLHttpRequest");
             }
+            if (!string.IsNullOrEmpty(Public.WebProxy))
+            {
+                request.Proxy = new WebProxy(Public.WebProxy);
+            }
             Stream requestStream = request.GetRequestStream();
             requestStream.Write(postData, 0, postData.Length);
             requestStream.Close();
@@ -104,7 +112,5 @@ namespace Cracker._12306.Helper
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             return response;
         }
-
-        
     }
 }

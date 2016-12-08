@@ -137,6 +137,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "12306订票助手----Cracker";
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

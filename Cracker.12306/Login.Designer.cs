@@ -118,7 +118,8 @@
             this.Controls.Add(this.pic_PassCode);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Login";
-            this.Text = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "登录";
             ((System.ComponentModel.ISupportInitialize)(this.pic_PassCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Refresh)).EndInit();
             this.ResumeLayout(false);

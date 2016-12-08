@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Extend.cs" />
     <Compile Include="Handle\Login.cs" />
+    <Compile Include="Handle\User.cs" />
     <Compile Include="Http.cs" />
     <Compile Include="Model\Station.cs" />
     <Compile Include="Model\StationStartTime.cs" />
