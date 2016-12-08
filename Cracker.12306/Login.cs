@@ -36,7 +36,11 @@ namespace Cracker._12306
                 {
                     this.btn_Login.Enabled = false;
                     this.btn_Login.Text = "正在登录";
+                    if (_login.Start(txt_UserName.Text, txt_Password.Text, PassCodeAllPoint))
+                    {
+                        this.btn_Login.Text = "登录成功";
 
+                    }
                 }
             }
             else
